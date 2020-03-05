@@ -1,0 +1,121 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+.menu1 > ul li a{
+    display: block;
+    background: #2d2d2d;
+    color: #FFFFFF;
+    border-right: 1px solid #F7F7F7;
+    border-bottom: 1px solid #F7F7F7;
+    list-style: none;
+    padding: 0px 74px 0px 75px;
+}
+a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 95px;
+    font-size: 22px;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.menu1 li a:hover{
+    background: #FFFFFF;
+    color: #2d2d2d;
+    box-shadow: 1px 5px 50px black;
+    transition: all 0.2s ease;
+}
+.menu1 > ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center
+}
+.menu1 li ul{
+    position: absolute;
+    min-width: 150px;
+    display: none;
+}
+.menu1 li > ul li a{
+    padding: 10px;
+    text-transform: none;
+}
+.menu1 li > ul li ul{
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+.con2{
+    list-style: none;
+    width: 250px;
+}
+.con3{
+    list-style: none;
+    position: relative;
+    right: -70px;
+    top: 117px;
+    width: 220px;
+}
+.con4{
+    list-style: none;
+    position: relative;
+    right: -70px;
+    width: 220px;
+}
+.menu1 li:hover > ul{
+    display: block;
+}
+p {
+    font-size: 20px;
+    color: #2d2d2d;
+    font-family: Open Sans, sans-serif;
+    line-height: 28px;
+    margin: 20px 100px;
+    max-width: 900px;
+    float: center;
+}
+.onestar {
+    height: 50px;
+    width: 50px;
+    font-family: Open sans;
+}
+.twostar {
+    height: 50px;
+    width: 50px;
+    font-family: Open sans;
+}
+.threestar {
+    height: 50px;
+    width: 50px;
+    font-family: Open sans;
+}
+.fourstar {
+    height: 50px;
+    width: 50px;
+    font-family: Open sans;
+}
+.fivestar {
+    height: 50px;
+    width: 50px;
+    font-family: Open sans;
+}
+.userRating .fivestar:hover {
+    color: #FF0000;
+    transition: all 0.1s ease;
+}
+.userRating .fourstar:hover {
+    color: #F5A000;
+    transition: all 0.1s ease;
+}
+.userRating .threestar:hover {
+    color: #FFF700;
+    transition: all 0.1s ease;
+}
+.userRating .twostar:hover {
+    color: #A4CC00;
+    transition: all 0.1s ease;
+}
+.userRating .onestar:hover {
+    color: #00CC00;
+    transition: all 0.1s ease;
+}
