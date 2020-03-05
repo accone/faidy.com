@@ -1,5 +1,5 @@
 let click = [];
-    $( document ).ready(function() {
+    $(document).ready(function() {
         $('.vote').on ('click', function(){
             $(this).addClass('active');
             var parent = $(this).parent().parent().parent().parent();
