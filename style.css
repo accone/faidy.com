@@ -161,3 +161,4 @@ input, textarea {
     position: relative;
     right: -70px;
 }
+html { overflow:  hidden; }
