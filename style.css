@@ -141,10 +141,11 @@ input, textarea {
     background: #2d2d2d;
     border: 1px solid #222222;
     border-radius: 5px;
-    height: 60px;
-    width: 300px;
+    max-height: 100000px;
+    width: 500px;
     line-height: 60px;
     color: #eee;
+    min-height: 60px;
 }
 .alertName {
     font-size: 17px;
@@ -161,4 +162,3 @@ input, textarea {
     position: relative;
     right: -70px;
 }
-html { overflow:  hidden; }
