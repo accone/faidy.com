@@ -1,19 +1,52 @@
-let click = [];
-    $(document).ready(function() {
-        $('.vote').on ('click', function(){
-            $(this).addClass('active');
-            var parent = $(this).parent().parent().parent().parent();
-            var commentCountElement = parent.find('.commentscount');
-            var ratingValueElement = parent.find('.ratingvalue');
-            var votedValue = parseInt($(this).attr('data-score'));
-            parent.addClass('voted');
-            var commentCount = parseInt(commentCountElement.text());
-            commentCountElement.text(commentCount + 1);
-            var rating = parseFloat(ratingValueElement.text());
-            rating = (commentCount * rating + votedValue)/(commentCount + 1);
-            ratingValueElement.text(rating.toFixed(2));
-            console.log('Пользователь поставил оценку - ' + votedValue);
-            localStorage.setItem('click', JSON.stringify(click));
-            if (localStorage.getItem('click')) click = JSON.parse(localStorage.getItem('click'));
-    })
-})
+let comments = [];
+loadComments();
+
+document.getElementById('comment-add').onclick = function(){
+    let commentName = document.getElementById('comment-name');
+    let commentBody = document.getElementById('comment-body');
+
+    let comment = {
+        name : commentName.value,
+        body : commentBody.value,
+        time : Math.floor(Date.now() / 1000)
+    }
+
+    commentName.value = '';
+    commentBody.value = '';
+
+    comments.push(comment);
+    saveComments();
+    showComments();
+}
+
+function saveComments(){
+    localStorage.setItem('comments', JSON.stringify(comments));
+}
+
+function loadComments(){
+    if (localStorage.getItem('comments')) comments = JSON.parse(localStorage.getItem('comments'));
+    showComments();
+}
+
+function showComments (){
+    let commentField = document.getElementById('comment-field');
+    let out = '';
+    comments.forEach(function(item){
+        out += `<p class="alertTime"><em>${timeConverter(item.time)}</em></p>`;
+        out += `<p class="alertName" role="alert">${item.name}</p>`;
+        out += `<p class="alertBody" role="alert">${item.body}</p>`;
+    });
+    commentField.innerHTML = out;
+}
+
+function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp * 1000);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var time = date + '-' + month + '.' + year + '.' + hour + ':' + min;
+    return time;
+  }
