@@ -32,7 +32,7 @@ function showComments (){
     let commentField = document.getElementById('comment-field');
     let out = '';
     comments.forEach(function(item){
-        out += `<p class="alertTime"><em>${timeConverter(item.time)}</em></p>`;
+        out += `<p class="alertTime"><em>${timeConverter(item.time)}</em></p>`;       
         out += `<p class="alertName" role="alert">${item.name}</p>`;
         out += `<p class="alertBody" role="alert">${item.body}</p>`;
     });
