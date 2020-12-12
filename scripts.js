@@ -4,7 +4,15 @@ loadComments();
 document.getElementById('comment-add').onclick = function(){
     let commentName = document.getElementById('comment-name');
     let commentBody = document.getElementById('comment-body');
-
+    
+    if(commentName.value < 3){
+        alert("Вы не ввели свое имя!");
+        return 1;
+    }
+    else if(commentBody.value==""){
+        alert("Вы не ввели комментарий!");
+        return 1;
+    }
     let comment = {
         name : commentName.value,
         body : commentBody.value,
